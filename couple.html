@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Couple Trip Itinerary</title>
+    <style>
+          body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+h2 {
+    color: #555;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#itinerary-details {
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Couple Trip Itinerary</h1>
+
+        <section id="form-section">
+            <h2>Enter Your Trip Details</h2>
+            <form id="trip-form">
+                <label for="adults">Adults:</label>
+                <input type="text" id="adults" name="adults" placeholder="John Smith, Jane Smith, etc." required><br><br>
+                
+                <label for="children">Children:</label>
+                <input type="text" id="children" name="children" placeholder="Sarah Smith, David Smith, etc." required><br><br>
+                
+                <label for="package">Tour Package:</label>
+                <input type="text" id="package" name="package" placeholder="Family Adventure Package" required><br><br>
+                
+                <label for="from">From:</label>
+                <input type="text" id="from" name="from" placeholder="New York City, NY" required><br><br>
+                
+                <label for="destination">Destination:</label>
+                <input type="text" id="destination" name="destination" placeholder="Orlando, FL" required><br><br>
+                
+                <label for="start-date">Start Date:</label>
+                <input type="date" id="start-date" name="start-date" required><br><br>
+                
+                <label for="end-date">End Date:</label>
+                <input type="date" id="end-date" name="end-date" required><br><br>
+                
+                <label for="days">No. of Days:</label>
+                <input type="number" id="days" name="days" placeholder="6" required><br><br>
+                
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <section id="itinerary">
+            <h2>Generated Itinerary</h2>
+            <div id="itinerary-details"></div>
+        </section>
+    </div>
+
+    <script>
+          document.getElementById('trip-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting the traditional way
+
+    // Get form values
+    const adults = document.getElementById('adults').value;
+    const children = document.getElementById('children').value;
+    const package = document.getElementById('package').value;
+    const from = document.getElementById('from').value;
+    const destination = document.getElementById('destination').value;
+    const startDate = document.getElementById('start-date').value;
+    const endDate = document.getElementById('end-date').value;
+    const days = document.getElementById('days').value;
+
+    // Generate itinerary details
+    const itineraryDetails = `
+        <h3>Members</h3>
+        <p><strong>Adults:</strong> ${adults}</p>
+        <p><strong>Children:</strong> ${children}</p>
+        <h3>Tour Package</h3>
+        <p>${package}</p>
+        <h3>Details</h3>
+        <p><strong>From:</strong> ${from}</p>
+        <p><strong>Destination:</strong> ${destination}</p>
+        <p><strong>Date:</strong> ${startDate} - ${endDate}</p>
+        <p><strong>No. of Days:</strong> ${days} Days</p>
+    `;
+
+    // Display itinerary details
+    document.getElementById('itinerary-details').innerHTML = itineraryDetails;
+});
+
+    </script>
+</body>
+</html>

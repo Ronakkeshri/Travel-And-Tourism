@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Trip Itinerary</title>
+    <style>
+          * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f8ff;
+    color: #333;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-section h2, #itineraryOutput h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.hidden {
+    display: none;
+}
+
+#itineraryOutput p {
+    margin-bottom: 10px;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Family Trip Itinerary</h1>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <h2>Enter Your Itinerary Details</h2>
+            <form id="itineraryForm">
+                <label for="adults">Adults (separate names with commas):</label>
+                <input type="text" id="adults" name="adults" required>
+
+                <label for="children">Children (separate names with commas):</label>
+                <input type="text" id="children" name="children" required>
+
+                <label for="package">Tour Package:</label>
+                <input type="text" id="package" name="package" required>
+
+                <label for="departure">From:</label>
+                <input type="text" id="departure" name="departure" required>
+
+                <label for="destination">Destination:</label>
+                <input type="text" id="destination" name="destination" required>
+
+                <label for="startDate">Start Date:</label>
+                <input type="date" id="startDate" name="startDate" required>
+
+                <label for="endDate">End Date:</label>
+                <input type="date" id="endDate" name="endDate" required>
+
+                <label for="numDays">Number of Days:</label>
+                <input type="number" id="numDays" name="numDays" required>
+
+                <button type="submit">Submit Itinerary</button>
+            </form>
+        </section>
+
+        <section id="itineraryOutput" class="hidden">
+            <h2>Itinerary Details</h2>
+            <p><strong>Members:</strong></p>
+            <p><strong>Adults:</strong> <span id="outputAdults"></span></p>
+            <p><strong>Children:</strong> <span id="outputChildren"></span></p>
+            <p><strong>Tour Package:</strong> <span id="outputPackage"></span></p>
+            <p><strong>From:</strong> <span id="outputDeparture"></span></p>
+            <p><strong>Destination:</strong> <span id="outputDestination"></span></p>
+            <p><strong>Date:</strong> <span id="outputDateRange"></span></p>
+            <p><strong>No. of Days:</strong> <span id="outputNumDays"></span></p>
+        </section>
+    </main>
+
+    <script>
+          document.getElementById("itineraryForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const adults = document.getElementById("adults").value;
+    const children = document.getElementById("children").value;
+    const tourPackage = document.getElementById("package").value;
+    const departure = document.getElementById("departure").value;
+    const destination = document.getElementById("destination").value;
+    const startDate = document.getElementById("startDate").value;
+    const endDate = document.getElementById("endDate").value;
+    const numDays = document.getElementById("numDays").value;
+
+    document.getElementById("outputAdults").textContent = adults;
+    document.getElementById("outputChildren").textContent = children;
+    document.getElementById("outputPackage").textContent = tourPackage;
+    document.getElementById("outputDeparture").textContent = departure;
+    document.getElementById("outputDestination").textContent = destination;
+    document.getElementById("outputDateRange").textContent = `${startDate} to ${endDate}`;
+    document.getElementById("outputNumDays").textContent = numDays;
+
+    document.getElementById("itineraryOutput").classList.remove("hidden");
+});
+
+    </script>
+</body>
+</html>

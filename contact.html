@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+          * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f8ff;
+    color: #333;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.contact-info p, .office-address p, .agency-info p {
+    margin-bottom: 10px;
+}
+
+.social-media ul {
+    list-style: none;
+    padding: 0;
+}
+
+.social-media ul li {
+    margin-bottom: 10px;
+}
+
+.social-media a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.social-media a:hover {
+    text-decoration: underline;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.hidden {
+    display: none;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>We’d Love to Hear From You!</h1>
+    </header>
+
+    <main>
+        <section class="contact-info">
+            <h2>Customer Service</h2>
+            <p><strong>Phone:</strong> [Insert Phone Number]</p>
+            <p><strong>Email:</strong> [Insert Email Address]</p>
+            <p><strong>Operating Hours:</strong> [Insert Operating Hours]</p>
+        </section>
+
+        <section class="office-address">
+            <h2>Office Address</h2>
+            <p><strong>Location:</strong> [Insert Address]</p>
+            <p><strong>City, State, Zip Code</strong></p>
+        </section>
+
+        <section class="social-media">
+            <h2>Social Media</h2>
+            <ul>
+                <li><a href="#" target="_blank">Facebook</a></li>
+                <li><a href="#" target="_blank">Twitter</a></li>
+                <li><a href="#" target="_blank">Instagram</a></li>
+                <li><a href="#" target="_blank">LinkedIn</a></li>
+            </ul>
+        </section>
+
+        <section class="inquiry-form">
+            <h2>Online Inquiry Form</h2>
+            <form id="inquiryForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone Number (Optional):</label>
+                <input type="tel" id="phone" name="phone">
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+            <p id="formMessage" class="hidden">Thank you for reaching out! We will get back to you as soon as possible.</p>
+        </section>
+
+        <section class="agency-info">
+            <h2>Travel Agency Licensing</h2>
+            <p><strong>License Number:</strong> [Insert License Number]</p>
+            <p><strong>Regulatory Authority:</strong> [Insert Authority Name]</p>
+        </section>
+
+        <section class="privacy-policy">
+            <h2>Privacy Policy</h2>
+            <p>Please review our <a href="#" target="_blank">Privacy Policy</a> for details on how we handle your personal information.</p>
+        </section>
+    </main>
+
+    <script>
+          document.getElementById("inquiryForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    // Here you could handle form submission, e.g., send data to a server
+    // For this example, we'll just display a thank you message
+
+    document.getElementById("formMessage").classList.remove("hidden");
+    document.getElementById("inquiryForm").reset(); // Reset form fields
+});
+
+    </script>
+</body>
+</html>

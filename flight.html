@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Booking</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #fcfcfc;
+        }
+
+        .booking-form {
+            background-color: rgba(240, 156, 87, 0.758);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 800px;
+        }
+
+        .booking-form h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .booking-form .row {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .booking-form .label {
+            width: 150px;
+            text-align: right;
+            margin-right: 20px;
+        }
+
+        .booking-form input[type="text"],
+        .booking-form input[type="date"],
+        .booking-form select {
+            padding: 10px;
+            border: 1px solid #000;
+            border-radius: 12px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .booking-form button {
+            background-color: #ff5f02;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .booking-form button:hover {
+            background-color: #f58b01;
+        }
+
+        .booking-form .special-fares {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .booking-form .special-fares .fare-option {
+            display: flex;
+            align-items: center;
+        }
+
+        .booking-form .special-fares .fare-option input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .booking-form .special-fares .fare-option label {
+            margin-right: 20px;
+        }
+
+        .booking-form .extra-savings {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .nav-tabs {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .nav-tabs a {
+            padding: 10px 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .nav-tabs a.active {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .nav-tabs a:hover {
+            background-color: #0056b3;
+        }
+
+        .nav-tabs img {
+            width: 30px;
+            height: 30px;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="booking-form">
+            <h2>Book Your Flight</h2>
+
+            <div class="nav-tabs">
+                <a href="#" class="active"><img src="https://img.icons8.com/ios/50/000000/airplane-take-off.png" alt="Flights"/> Flights</a>
+                <a href="#"><img src="d85f8422-bc47-42be-8935-2b919c13d3f2.jfif" alt="Hotels"/> Hotels</a>
+                <a href="#"><img src="https://img.icons8.com/ios-filled/50/000000/home.png" alt="Homestays"/> Homestays & Villas</a>
+                <a href="#"><img src="https://img.icons8.com/ios-filled/50/000000/beach-umbrella.png" alt="Holiday Packages"/> Holiday Packages</a>
+                <a href="#"><img src="https://img.icons8.com/ios-filled/50/000000/train.png" alt="Trains"/> Trains</a>
+                <a href="#"><img src="https://img.icons8.com/ios-filled/50/000000/bus.png" alt="Buses"/> Buses</a>
+                <a href="#"><img src="https://img.icons8.com/ios-filled/50/000000/taxi.png" alt="Cabs"/> Cabs</a>
+                <a href="#"><img src="https://img.icons8.com/ios-filled/50/000000/money-bag.png" alt="Forex Card"/> Forex Card & Currency</a>
+                <a href="#"><img src="https://img.icons8.com/ios-filled/50/000000/shield.png" alt="Travel Insurance"/> Travel Insurance</a>
+            </div>
+
+            <div class="row">
+                <div class="label">From:</div>
+                <div>
+                    <input type="text" placeholder="select" value="select your starting of the journey">
+                    <!-- <span>DEL, Delhi Airport India</span> -->
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="label">To:</div>
+                <div>
+                    <input type="text" placeholder="Bengaluru" value="select your destination">
+                    <!-- <span>BLR, Bengaluru International Airport...</span> -->
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="label">Departure:</div>
+                <div>
+                    <input type="date" value="0000-00-00">
+                    <!-- <span>Friday</span> -->
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="label">Return:</div>
+                <div>
+                    <input type="date" placeholder="Tap to add a return date for bigger discounts">
+                    <!-- <span>Tap to add a return date for bigger discounts</span> -->
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="label">Travellers & Class:</div>
+                <div>
+                    <select>
+                        <option value="1">1 Traveller</option>
+                        <option value="2">2 Travellers</option>
+                        <option value="3">3 Travellers</option>
+                        <option value="4">4 Travellers</option>
+                        <option value="4">More Than 4 Travellers</option>
+                    </select>
+                    <span>Economy/Premium Economy</span>
+                </div>
+            </div>
+
+            <div class="special-fares">
+                <div class="fare-option">
+                    <input type="radio" name="fare" id="regular" checked>
+                    <label for="regular">Regular</label>
+                    <span>Regular fares</span>
+                </div>
+                <div class="fare-option">
+                    <input type="radio" name="fare" id="student">
+                    <label for="student">Student</label>
+                    <span>Extra discounts/baggage</span>
+                </div>
+                <div class="fare-option">
+                    <input type="radio" name="fare" id="senior-citizen">
+                    <label for="senior-citizen">Senior Citizen</label>
+                    <span>up to ₹600 off</span>
+                </div>
+                <div class="fare-option">
+                    <input type="radio" name="fare" id="armed-forces">
+                    <label for="armed-forces">Armed Forces</label>
+                    <span>up to ₹600 off</span>
+                </div>
+                <div class="fare-option">
+                    <input type="radio" name="fare" id="doctor-nurses">
+                    <label for="doctor-nurses">Doctor and Nurses</label>
+                    <span>up to ₹600 off</span>
+                </div>
+            </div>
+
+            <div class="extra-savings">
+                <span>EXTRA SAVINGS</span>
+            </div>
+
+            <button>SEARCH</button>
+        </div>
+    </div>
+</body>
+</html>

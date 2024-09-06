@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  background-color: #f7f7f7;
+  font-family: sans-serif;
+}
+
+.container {
+  height: 80vh ;
+  width: 100%;
+  padding: 50px 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  align-content: center;
+
+}
+
+.search-bar {
+  background-color: #fff;
+  padding: 50px;
+  border-radius: 5px;
+  width: 60%;
+  display: flex;
+  align-items: center;
+}
+
+.search-bar input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 100%;
+  margin-right: 20px;
+}
+
+.search-bar button {
+  background-color: #ff6969;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background-color: #ff4d4d;
+}
+
+.search-button {
+  background-color: #f7f7f7;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 30%;
+}
+
+.search-button:hover {
+  background-color: #ff4d4d;
+}
+
+.search-button p {
+  text-align: center;
+  font-weight: bold;
+}
+
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="search-bar">
+      <input type="text" placeholder="From">
+      <input type="text" placeholder="To">
+      <input type="date">
+      <button>Search Buses</button>
+    </div>
+    <!-- <div class="search-button">
+      <p>SEARCH BUSES</p>
+    </div> -->
+  </div>
+</body>
+</html>
